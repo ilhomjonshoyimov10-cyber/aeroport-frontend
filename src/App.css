@@ -360,3 +360,103 @@ body {
 }
 
 .filter-select:focus { border-color: var(--accent); }
+
+/* ===== RESPONSIVE / MOBILE ===== */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .navbar {
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .navbar-links {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  .navbar-links a {
+    font-size: 0.75rem;
+  }
+
+  /* Hero */
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Stats */
+  .stats-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-card {
+    padding: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  /* Page */
+  .page {
+    padding: 1.5rem 1rem;
+  }
+
+  .page-title {
+    font-size: 1.4rem;
+  }
+
+  /* Cards */
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Filter */
+  .filter-bar {
+    flex-direction: column;
+  }
+
+  .filter-input, .filter-select {
+    width: 100%;
+    min-width: unset;
+  }
+
+  /* Parvoz card */
+  .parvoz-city {
+    font-size: 1.1rem;
+  }
+
+  .parvoz-info {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo {
+    font-size: 1rem;
+  }
+
+  .stats-section {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+}
