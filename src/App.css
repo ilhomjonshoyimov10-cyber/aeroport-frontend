@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap');
+
+:root {
+  --bg: #050a14;
+  --bg2: #0a1628;
+  --accent: #00d4ff;
+  --accent2: #ff6b35;
+  --text: #e8f4fd;
+  --text2: #8aa5c0;
+  --card: #0d1f35;
+  --border: #1a3a5c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Rajdhani', sans-serif;
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  background: rgba(5, 10, 20, 0.95);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-logo {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.navbar-logo span { color: var(--accent2); }
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navbar-links a {
+  color: var(--text2);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover { color: var(--accent); }
+
+.hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background: radial-gradient(ellipse at center, #0a2040 0%, #050a14 70%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0,212,255,0.05) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+}
+
+.hero-title {
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--text2);
+  margin-bottom: 3rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-primary {
+  padding: 0.9rem 2.5rem;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+}
+
+.btn-primary:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(0,212,255,0.5);
+}
+
+.btn-secondary {
+  padding: 0.9rem 2.5rem;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+}
+
+.btn-secondary:hover {
+  background: rgba(0,212,255,0.1);
+  transform: translateY(-2px);
+}
+
+.stats-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.stat-card {
+  background: var(--bg2);
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.stat-number {
+  font-family: 'Orbitron', monospace;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--accent);
+  display: block;
+}
+
+.stat-label {
+  color: var(--text2);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+.page {
+  padding: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  letter-spacing: 3px;
+}
+
+.page-subtitle {
+  color: var(--text2);
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.parvoz-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.parvoz-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.parvoz-card:hover::before { transform: scaleX(1); }
+
+.parvoz-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(0,212,255,0.1);
+}
+
+.parvoz-route {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.parvoz-city {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.parvoz-arrow { color: var(--accent); font-size: 1.5rem; flex: 1; text-align: center; }
+
+.parvoz-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.parvoz-info-item { display: flex; flex-direction: column; gap: 0.2rem; }
+.info-label { font-size: 0.7rem; color: var(--text2); letter-spacing: 2px; text-transform: uppercase; }
+.info-value { font-size: 0.95rem; color: var(--text); font-weight: 600; }
+
+.holat-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+.holat-rejalashtirilgan { background: rgba(0,212,255,0.15); color: var(--accent); border: 1px solid var(--accent); }
+.holat-kechikkan { background: rgba(255,107,53,0.15); color: var(--accent2); border: 1px solid var(--accent2); }
+.holat-bekor_qilingan { background: rgba(255,50,50,0.15); color: #ff5050; border: 1px solid #ff5050; }
+.holat-uchdi { background: rgba(50,255,100,0.15); color: #32ff64; border: 1px solid #32ff64; }
+.holat-qondi { background: rgba(150,150,150,0.15); color: #aaa; border: 1px solid #aaa; }
+
+.xizmat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
+
+.xizmat-card:hover {
+  border-color: var(--accent2);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(255,107,53,0.1);
+}
+
+.xizmat-kategoriya { font-size: 0.7rem; color: var(--accent2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem; }
+.xizmat-nomi { font-family: 'Orbitron', monospace; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+.xizmat-info { color: var(--text2); font-size: 0.9rem; display: flex; flex-direction: column; gap: 0.3rem; margin-top: 1rem; }
+
+.loading {
+  text-align: center;
+  padding: 5rem;
+  font-family: 'Orbitron', monospace;
+  color: var(--accent);
+  letter-spacing: 3px;
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.empty { text-align: center; padding: 5rem; color: var(--text2); font-size: 1.1rem; }
+
+.filter-bar { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+
+.filter-input {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.7rem 1.2rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-input:focus { border-color: var(--accent); }
+
+.filter-select {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.7rem 1.2rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.filter-select:focus { border-color: var(--accent); }
