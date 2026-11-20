@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Aeroport — frontend (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Web client for the airport services system: flight board, ticket booking, terminal services,
+statistics charts, and sign-up / login with JWT. The API is in
+[aeroport-backend](https://github.com/ilhomjonshoyimov10-cyber/aeroport-backend).
 
-## Available Scripts
+> 🇺🇿 **O'zbekcha:** Aeroport tizimining veb-ilovasi: parvozlar jadvali, chipta bron qilish, terminal xizmatlari, statistika grafiklari, JWT orqali ro'yxatdan o'tish va kirish.
 
-In the project directory, you can run:
+## Stack
 
-### `npm start`
+React 19 · React Router 7 · Axios · Chart.js (react-chartjs-2) · Create React App
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Pages
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Page | File | What it shows |
+|---|---|---|
+| Home | `src/pages/Home.js` | Landing page (Tashkent airport) |
+| Flights | `src/pages/Parvozlar.js` | Flight list from `/api/parvozlar/` |
+| Booking | `src/pages/Bron.js` | Books a ticket: picks a flight, creates the passenger and the ticket |
+| Services | `src/pages/Xizmatlar.js` | Terminal service points, filtered by category |
+| Statistics | `src/pages/Statistika.js` | Charts built from flights, services and tickets |
+| Login / Register | `src/pages/Login.js`, `src/pages/Register.js` | JWT authentication |
 
-### `npm test`
+## Run locally
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Start the backend first (it listens on `http://127.0.0.1:8000`), then:
 
-### `npm run build`
+```bash
+npm install
+npm start        # http://localhost:3000
+npm run build    # production build in build/
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The API address is currently written as `http://127.0.0.1:8000` inside the page components. To deploy,
+move it to an environment variable (for example `REACT_APP_API_URL`) and point it to the hosted backend.
